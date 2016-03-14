@@ -1,0 +1,7 @@
+---
+
+- hosts: localhost
+  remote_user: root
+  tasks:
+    - name: Install ansible
+      apt-get: pkg=ansible state=installed
