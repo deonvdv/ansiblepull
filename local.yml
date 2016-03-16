@@ -4,6 +4,6 @@
   remote_user: root
   roles:
     - basiclibs
-  tasks:
-    - name: Install ansible
-      apt: pkg=ansible state=installed
+#  tasks:
+#    - name: Install ansible
+#      apt: pkg=ansible state=installed
