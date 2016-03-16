@@ -33,10 +33,11 @@
   when: ansible_distribution == 'Ubuntu' or ansible_distribution == 'Debian'
 
 - name: add nginx source list
-  apt_repository: repo='deb http://nginx.org/packages/ubuntu/ trusty nginx'
+  apt_repository: repo='deb http://nginx.org/packages/ubuntu/ trusty nginx' state=present
+
 
 - name: add nginx source list
-  apt_repository: repo='deb-src http://nginx.org/packages/ubuntu/ trusty nginx'
+  apt_repository: repo='deb-src http://nginx.org/packages/ubuntu/ trusty nginx' state=present
 
 - name: install latest nginx
   apt: name=nginx state=latest
