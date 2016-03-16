@@ -1,4 +1,4 @@
-- name: Install nagios plugins for Ubuntu
+- name: Install libs for Ubuntu
   apt: name={{ item }} state=present
   with_items:
    - dh-php5
