@@ -27,3 +27,16 @@
    - git
    - iptables-persistent
   when: ansible_distribution == 'Ubuntu' or ansible_distribution == 'Debian'
+
+- name: for nginx latest version
+  apt_key: url=http://nginx.org/keys/nginx_signing.key
+  when: ansible_distribution == 'Ubuntu' or ansible_distribution == 'Debian'
+
+- name: add nginx source list
+  apt_repository: repo='deb http://nginx.org/packages/ubuntu/ trusty nginx'
+
+- name: add nginx source list
+  apt_repository: repo='deb-src http://nginx.org/packages/ubuntu/ trusty nginx'
+
+- name: install latest nginx
+  apt: name=nginx state=latest
