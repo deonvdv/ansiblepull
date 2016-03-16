@@ -2,6 +2,8 @@
 
 - hosts: localhost
   remote_user: root
-  tasks:
-    - name: Install ansible
-      apt: pkg=ansible state=installed
+  roles:
+    - basiclibs
+#  tasks:
+#    - name: Install ansible
+#      apt: pkg=ansible state=installed
