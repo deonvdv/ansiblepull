@@ -47,11 +47,11 @@
   register: ec2_facts
 
 - name: print
-  debug: msg=ec2_facts
+  debug: msg=ec2_facts.stdout
 
 - name: get tag 
   local_action: ec2_tag resource={{ec2_facts.ansible_facts.ansible_ec2_instance_id}} region=us-west-2 state=list
   register: result 
 
 - name: print
-  debug: msg=result
+  debug: msg=result.stdout
