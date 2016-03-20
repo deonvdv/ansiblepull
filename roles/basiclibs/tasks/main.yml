@@ -70,5 +70,5 @@
 #  when: "{{autoscale_group.stdout}}" == "dpapi-userdataG"
 
 - name: copy config_files_for_api
-  copy: src='api_file' dest='/usr/local/src/api_file'
+  template: src=api_file dest=/usr/local/src/api_file
   when: {{ autoscale_group.stdout }} == 'dpapi-userdataG'
