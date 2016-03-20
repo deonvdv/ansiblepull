@@ -44,10 +44,10 @@
 
 - name: instance ID
   shell: wget -qO- http://instance-data/latest/meta-data/instance-id
-  register: instance_id.stdout
+  register: instance_id
 
 - name: print
-  debug: var=instance_id
+  debug: var=instance_id.stdout
 
 - name: region
   shell: wget -qO- http://instance-data/latest/meta-data/placement/availability-zone | sed 's/.$//' 
