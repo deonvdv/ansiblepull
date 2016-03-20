@@ -57,7 +57,7 @@
   debug: var=region.stdout
 
 - name: get autoscale group
-  shell: aws ec2 describe-tags --region {{ region.stdout }} --filter "Name=resource-id,Values={{ instance_id.stdout }}t" --output=text |grep autoscaling |awk '{ print $5}'
+  shell: aws ec2 describe-tags --region {{ region.stdout }} --filter "Name=resource-id,Values={{ instance_id.stdout }}" --output=text |grep autoscaling |awk '{ print $5}'
   register: autoscale_group
 
 - name: print
