@@ -63,11 +63,14 @@
 - name: print
   debug: var=autoscale_group.stdout
 
+- name: set_fact
+  set_fact: autoscale_group={{autoscale_group.stdout}}
+
 - name: copy config_files_for_api
   copy: src={{ item.path }} dest={{ item.dest }} 
   with_items:
     - { path: 'api_file', dest: '/usr/local/src/api_file' }
-  when: "{{autoscale_group.stdout}}" == "dpapi-userdataG"
+  when: autoscale_group == "dpapi-userdataG"
 
 #- name: copy config_files_for_api
 #  template: src=api_file dest=/usr/local/src/api_file
