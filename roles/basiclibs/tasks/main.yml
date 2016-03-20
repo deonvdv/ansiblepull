@@ -54,4 +54,4 @@
   register: region
 
 - name: print
-  debug: var=region
+  debug: var=region verbosity=2
