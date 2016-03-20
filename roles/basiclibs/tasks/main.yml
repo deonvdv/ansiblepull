@@ -44,7 +44,7 @@
 
 - name: instance ID
   shell: wget -qO- http://instance-data/latest/meta-data/instance-id
-  register: instance_id
+  register: instance_id.stdout
 
 - name: print
   debug: var=instance_id
@@ -54,4 +54,4 @@
   register: region
 
 - name: print
-  debug: var=region verbosity=2
+  debug: var=region.stdout
