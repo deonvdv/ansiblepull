@@ -70,7 +70,7 @@
   copy: src={{ item.path }} dest={{ item.dest }} 
   with_items:
     - { path: 'api_file', dest: '/usr/local/src/api_file' }
-  when: autoscale_group == "dpapi-userdataG"
+  when: autoscale_group == "dpapi-userdata"
 
 #- name: copy config_files_for_api
 #  template: src=api_file dest=/usr/local/src/api_file
