@@ -67,4 +67,4 @@
   copy: src={{ item.path }} dest={{ item.dest }} 
   with_items:
     - { path: 'api_file', dest: '/usr/local/src/api_file' }
-  when: {{ autoscale_group.stdout }} == "dpapi-userdataG" 
+  when: "{{ autoscale_group.stdout }}" == "dpapi-userdataG" 
