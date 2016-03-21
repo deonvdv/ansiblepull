@@ -73,7 +73,7 @@
   when: autoscale_group == "dpapi-userdataG"
 
 - name: ensure directory
-  file: path=/var/www/api.datedata.com  owner=foo group=foo state=directory mode=0755 recurse=yes
+  file: path=/var/www/api.datedata.com  owner=nginx group=nginx state=directory mode=0755 recurse=yes
   when: autoscale_group == "dpapi-userdataG"
 
 
