@@ -70,7 +70,12 @@
   copy: src={{ item.path }} dest={{ item.dest }} 
   with_items:
     - { path: 'api_file', dest: '/usr/local/src/api_file' }
-  when: autoscale_group == "dpapi-userdata"
+  when: autoscale_group == "dpapi-userdataG"
+
+- name: ensure directory
+  file: path=/var/www/api.datedata.com  owner=foo group=foo state=directory mode=0755 recurse=yes
+  when: autoscale_group == "dpapi-userdataG"
+
 
 #- name: copy config_files_for_api
 #  template: src=api_file dest=/usr/local/src/api_file
