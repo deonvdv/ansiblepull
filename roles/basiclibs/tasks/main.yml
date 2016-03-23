@@ -51,6 +51,9 @@
 - name: install latest nginx
   apt: name=nginx state=latest
 
+- name: nginx user
+  user: name=nginx shell=/bin/bash groups=nginx home=/home/nginx
+
 - name: instance ID
   shell: wget -qO- http://instance-data/latest/meta-data/instance-id
   register: instance_id
