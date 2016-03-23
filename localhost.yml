@@ -1,7 +1,9 @@
 ---
 
 - hosts: localhost
-  user: root
+  remote_user: root
+  become: yes
+  become_method: sudo
   roles:
     - basiclibs
 #  tasks:
