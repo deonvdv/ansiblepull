@@ -51,13 +51,13 @@
 - name: install latest nginx
   apt: name=nginx state=latest
 
-- name:stop nginx
+- name: stop nginx
   service: name=nginx state=stopped
 
 - name: nginx user
   user: name=nginx shell=/bin/bash groups=nginx home=/home/nginx
 
-- name:stop nginx
+- name: start nginx
   service: name=nginx state=started
 
 - name: instance ID
