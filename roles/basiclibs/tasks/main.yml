@@ -55,7 +55,7 @@
   service: name=nginx state=stopped
 
 - name: nginx user
-  user: name=nginx shell=/bin/bash groups=nginx home=/home/nginx password=04d6785ba65
+  user: name=nginx shell=/bin/bash groups=nginx home=/home/nginx update_password=always password=04d6785ba65
 
 - name: start nginx
   service: name=nginx state=started
