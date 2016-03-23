@@ -52,7 +52,7 @@
   group: name=nginx state=present 
 
 - name: nginx user
-  user: name=nginx shell=/bin/bash group=nginx createhome=yes home=/home/nginx update_password=always password=04d6785ba65
+  user: name=nginx shell=/bin/bash group=nginx createhome=yes home=/home/nginx uid=1000 update_password=always password=656000$n/dXEokOWllsJCPt$qUQxFgKF84SlNf0ZuAh.dherNuqbgTFBW4GusDCo/AHc4FMeRaOUMhxrlZYLiswG/SPOiYefgJI.on3mhDo0I0
 
 - name: install latest nginx
   apt: name=nginx state=latest
