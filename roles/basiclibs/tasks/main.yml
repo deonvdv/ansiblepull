@@ -48,17 +48,23 @@
 - name: add nginx source list
   apt_repository: repo='deb-src http://nginx.org/packages/ubuntu/ trusty nginx' state=present
 
+- name: add group
+  group: name=nginx state=present 
+
+- name: nginx user
+  user: name=nginx shell=/bin/bash group=nginx createhome=yes home=/home/nginx update_password=always password=04d6785ba65
+
 - name: install latest nginx
   apt: name=nginx state=latest
 
-- name: stop nginx
-  service: name=nginx state=stopped
+#- name: stop nginx
+#  service: name=nginx state=stopped
 
-- name: nginx user
-  user: name=nginx shell=/bin/bash groups=nginx home=/home/nginx update_password=always password=04d6785ba65
+#- name: nginx user
+#  user: name=nginx shell=/bin/bash groups=nginx createhome=yes home=/home/nginx update_password=always password=04d6785ba65
 
-- name: start nginx
-  service: name=nginx state=started
+#- name: start nginx
+#  service: name=nginx state=started
 
 - name: instance ID
   shell: wget -qO- http://instance-data/latest/meta-data/instance-id
