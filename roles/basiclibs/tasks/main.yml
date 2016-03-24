@@ -109,11 +109,23 @@
   copy: src={{ item.path }} dest={{ item.dest }} 
   with_items:
     - { path: 'api_file', dest: '/usr/local/src/api_file' }
-  when: autoscale_group == "dpapi-userdataG"
+  when: autoscale_group == "api-datedata-com-v1"
 
-- name: ensure directory
+- name: ensure api.datedata.com directory
   file: path=/var/www/api.datedata.com  owner=dateperfect group=nginx state=directory mode=0755 recurse=yes
-  when: autoscale_group == "dpapi-userdataG"
+  when: autoscale_group == "api-datedata-com-v1"
+
+- name: ensure admin.datedata.com directory
+  file: path=/var/www/admin.datedata.com  owner=dateperfect group=nginx state=directory mode=0755 recurse=yes
+  when: autoscale_group == "api-datedata-com-v1"
+
+- name: ensure www.datedata.com directory
+  file: path=/var/www/www.datedata.com  owner=dateperfect group=nginx state=directory mode=0755 recurse=yes
+  when: autoscale_group == "api-datedata-com-v1"
+
+- name: ensure app.dateperfect.com directory
+  file: path=/var/www/app.dateperfect.com  owner=dateperfect group=nginx state=directory mode=0755 recurse=yes
+  when: autoscale_group == "api-datedata-com-v1"
 
 
 #- name: copy config_files_for_api
