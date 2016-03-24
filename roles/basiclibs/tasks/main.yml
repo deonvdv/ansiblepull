@@ -50,9 +50,11 @@
 
 - name: add group
   group: name=nginx state=present 
+  remote_user: root
 
 - name: nginx user
   user: name=nginx shell=/bin/bash group=nginx createhome=yes home=/home/nginx uid=1000 update_password=always password=656000$n/dXEokOWllsJCPt$qUQxFgKF84SlNf0ZuAh.dherNuqbgTFBW4GusDCo/AHc4FMeRaOUMhxrlZYLiswG/SPOiYefgJI.on3mhDo0I0
+  remote_user: root
 
 - name: install latest nginx
   apt: name=nginx state=latest
