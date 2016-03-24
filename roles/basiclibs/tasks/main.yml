@@ -34,7 +34,7 @@
   #command: curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin creates=/usr/local/bin/composer
   
 - name: install composer2
-  commmand: php /tmp/composer-installer.php chdir=/tmp
+  command: php /tmp/composer-installer.php chdir=/tmp
 
 - name: rename composer.phar to composer
   command: mv /tmp/composer.phar /usr/local/bin/composer creates=/usr/local/bin/composer
