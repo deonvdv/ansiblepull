@@ -35,6 +35,7 @@
   
 - name: install composer2
   command: php /tmp/composer-installer.php chdir=/tmp
+  #test
 
 - name: rename composer.phar to composer
   command: mv /tmp/composer.phar /usr/local/bin/composer creates=/usr/local/bin/composer
